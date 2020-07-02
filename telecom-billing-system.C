@@ -1,12 +1,13 @@
 #include<stdio.h>
-// #include<conio.h>
 #include<ctype.h>
-#include<windows.h>
 #include<stdlib.h>
+#include <cstring>
+#include <unistd.h>
+// #include <windows.h> //uncomment it if you are running it in windows
 struct subscriber
 {
 char phonenumber[20];
-char name[50];
+char name[20];
 float amount;
 }s;
 void addrecords();
@@ -24,17 +25,16 @@ int main()
 
 
 
-	system("cls");
-
-	printf("\n\n\n\n\n\n\n\n\n**************************************************************");
-	printf("\n\t\t------TELECOM BILLING MANAGEMENT SYSTEM---");
+	system("clear");
+printf("\n\n\n\n\n\n\n\n\n**************************************************************");
+	printf("\n\t\t------TELECOM BILLING MANAGEMENT SYSTEM------");
 	printf("\n\t\t****************************************************************");
-	Sleep(2000);
+	//sleep(2000);
 	getchar();
-    system("cls");
+    system("clear");
 	while (1)
 	{
-		system("cls");
+		system("clear");
 		printf("\n Enter\n A : for adding new records.\n L : for list of records");
 		printf("\n M : for modifying records.\n P : for payment");
 		printf("\n S : for searching records.");
@@ -56,14 +56,14 @@ int main()
 			case 'D':
 				deleterecords();break;
 			case 'E':
-				system("cls");
+				system("clear");
 				printf("\n\n\t\t\t\tTHANK YOU");
 				printf("\n\n\n\n\n:\n\tFOR USING OUR SERVICE");
-				Sleep(2000);
+				//sleep(2000);
 				exit(0);
 				break;
 			default:
-				system("cls");
+				system("clear");
 				printf("Incorrect Input");
 				printf("\nAny key to continue");
 				getchar();
@@ -74,32 +74,32 @@ void addrecords()
 {
 	FILE *f;
 	char test;
-	f=fopen("c:/file.ojs","ab+");
+	f=fopen("file.ojs","ab+");
 	if(f==0)
-	{   f=fopen("c:/file.ojs","wb+");
-		system("cls");
+	{   f=fopen("file.ojs","wb+");
+		system("clear");
 		printf("please wait while we configure your computer");
 		printf("/npress any key to continue");
 		getchar();
 	}
 	while(1)
 	{
-		system("cls");
+		system("clear");
 		printf("\n Enter phone number:");
-		scanf("%s",&s.phonenumber);
+		scanf("%s",s.phonenumber);
 		printf("\n Enter name:");
 		fflush(stdin);
-		scanf("%[^\n]",&s.name);
+		scanf("%s",s.name);
 		printf("\n Enter amount:");
 		scanf("%f",&s.amount);
 		fwrite(&s,sizeof(s),1,f);
 		fflush(stdin);
-		system("cls");
+		system("clear");
 		printf("1 record successfully added");
 		printf("\n Press esc key to exit, any other key to add other record:");
 		test=getchar();
-		if(test==27)
-			break;
+
+		if(test==27) break;
 	}
 	fclose(f);
 }
@@ -107,9 +107,9 @@ void listrecords()
 {
 	FILE *f;
 	int i;
-	if((f=fopen("c:/file.ojs","rb"))==NULL)
+	if((f=fopen("file.ojs","rb"))==NULL)
 		exit(0);
-	system("cls");
+	system("clear");
 	printf("Phone Number\t\tUser Name\t\t\tAmount\n");
 	for(i=0;i<79;i++)
 		printf("-");
@@ -129,11 +129,11 @@ void deleterecords()
 	FILE *f,*t;
 	int i=1;
 	char phonenumber[20];
-	if((t=fopen("c:/temp.ojs","w+"))==NULL)
+	if((t=fopen("temp.ojs","w+"))==NULL)
 	exit(0);
-	if((f=fopen("c:/file.ojs","rb"))==NULL)
+	if((f=fopen("file.ojs","rb"))==NULL)
 	exit(0);
-	system("cls");
+	system("clear");
 	printf("Enter the phone number to be deleted from the Database");
 	fflush(stdin);
 	scanf("%[^\n]",phonenumber);
@@ -148,18 +148,18 @@ void deleterecords()
 			fwrite(&s,sizeof(s),1,t);
 	}
 	if(i==1)
-	{       system("cls");
+	{       system("clear");
 		printf("Phone number \"%s\" not found",phonenumber);
-		remove("c:/file.ojs");
-		rename("c:/temp.ojs","c:/file.ojs");
+		remove("file.ojs");
+		rename("temp.ojs","file.ojs");
 		getchar();
 		fclose(f);
 		fclose(t);
 		main();
 	}
-	remove("c:/file.ojs");
-	rename("c:/temp.ojs","c:/file.ojs");
-	system("cls");
+	remove("file.ojs");
+	rename("temp.ojs","file.ojs");
+	system("clear");
 	printf("The Number %s Successfully Deleted!!!!",phonenumber);
 	fclose(f);
 	fclose(t);
@@ -170,24 +170,24 @@ void searchrecords()
 	FILE *f;
 	char phonenumber[20];
 	int flag=1;
-	f=fopen("c:/file.ojs","rb+");
+	f=fopen("file.ojs","rb+");
 	if(f==0)
 		exit(0);
 	fflush(stdin);
-	system("cls");
+	system("clear");
 	printf("Enter Phone Number to search in our database");
 	scanf("%s", phonenumber);
 	while(fread(&s,sizeof(s),1,f)==1)
 	{
 		if(strcmp(s.phonenumber,phonenumber)==0)
-		{	system("cls");
+		{	system("clear");
 			printf(" Record Found ");
 			printf("\n\nPhonenumber: %s\nName: %s\nAmount: Rs.%0.2f\n",s.phonenumber,s.name,s.amount);
 			flag=0;
 			break;
 		}
 		else if(flag==1)
-		{	system("cls");
+		{	system("clear");
 			printf("Requested Phone Number Not found in our database");
 		}
 	}
@@ -199,9 +199,9 @@ void modifyrecords()
 	FILE *f;
 	char phonenumber[20];
 	long int size=sizeof(s);
-	if((f=fopen("c:/file.ojs","rb+"))==NULL)
+	if((f=fopen("file.ojs","rb+"))==NULL)
 		exit(0);
-	system("cls");
+	system("clear");
 	printf("Enter phone number of the subscriber to modify:");
 	scanf("%[^\n]",phonenumber);
 	fflush(stdin);
@@ -209,12 +209,12 @@ void modifyrecords()
 	{
 		if(strcmp(s.phonenumber,phonenumber)==0)
 		{
-			system("cls");
+			system("clear");
 			printf("\n Enter phone number:");
-			scanf("%s",&s.phonenumber);
+			scanf("%s",s.phonenumber);
 			printf("\n Enter name: ");
 			fflush(stdin);
-			scanf("%[^\n]",&s.name);
+			scanf("%[^\n]",s.name);
 			printf("\n Enter amount: ");
 			scanf("%f",&s.amount);
 			fseek(f,-size,SEEK_CUR);
@@ -231,9 +231,9 @@ void payment()
 	long int size=sizeof(s);
 	float amt;
 	int i;
-	if((f=fopen("c:/file.ojs","rb+"))==NULL)
+	if((f=fopen("file.ojs","rb+"))==NULL)
 		exit(0);
-	system("cls");
+	system("clear");
 	printf("Enter phone number of the subscriber for payment");
 	scanf("%[^\n]",phonenumber);
 	fflush(stdin);
@@ -241,7 +241,7 @@ void payment()
 	{
 		if(strcmp(s.phonenumber,phonenumber)==0)
 		{
-			system("cls");
+			system("clear");
 			printf("\n Phone No.: %s",s.phonenumber);
 			printf("\n Name: %s",s.name);
 			printf("\n Current amount: %f",s.amount);
@@ -257,8 +257,10 @@ void payment()
 			break;
 		}
 	}
-	system("cls");
+	system("clear");
 	printf("THANK YOU %s FOR YOUR TIMELY PAYMENTS",s.name);
 	getchar();
 	fclose(f);
+
 }
+	
