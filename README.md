@@ -10,3 +10,8 @@ View payment – shows amount to be paid
 Search records – search for added/updated records in file
 Delete records – removes data permanently from file
 This project is limited to the functions aforementioned. You can add new features as you like to make this project a better one.
+
+**Note
+if need some packages to install on your machine to run it use below links:
+https://docs.microsoft.com/en-us/cpp/build/vcpkg?view=vs-2019
+https://github.com/Microsoft/vcpkg
