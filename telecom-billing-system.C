@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<conio.h>
+// #include<conio.h>
 #include<ctype.h>
 #include<windows.h>
 #include<stdlib.h>
@@ -30,7 +30,7 @@ int main()
 	printf("\n\t\t------TELECOM BILLING MANAGEMENT SYSTEM---");
 	printf("\n\t\t****************************************************************");
 	Sleep(2000);
-	getch();
+	getchar();
     system("cls");
 	while (1)
 	{
@@ -39,7 +39,7 @@ int main()
 		printf("\n M : for modifying records.\n P : for payment");
 		printf("\n S : for searching records.");
 		printf("\n D : for deleting records.\n E : for exit\n");
-		choice=getche();
+		choice=getchar();
 		choice=toupper(choice);
 		switch(choice)
 		{
@@ -66,7 +66,7 @@ int main()
 				system("cls");
 				printf("Incorrect Input");
 				printf("\nAny key to continue");
-				getch();
+				getchar();
 		}
 	}
 }
@@ -80,7 +80,7 @@ void addrecords()
 		system("cls");
 		printf("please wait while we configure your computer");
 		printf("/npress any key to continue");
-		getch();
+		getchar();
 	}
 	while(1)
 	{
@@ -97,7 +97,7 @@ void addrecords()
 		system("cls");
 		printf("1 record successfully added");
 		printf("\n Press esc key to exit, any other key to add other record:");
-		test=getche();
+		test=getchar();
 		if(test==27)
 			break;
 	}
@@ -122,7 +122,7 @@ void listrecords()
 		printf("-");
 
 fclose(f);
-getch();
+getchar();
 }
 void deleterecords()
 {
@@ -152,7 +152,7 @@ void deleterecords()
 		printf("Phone number \"%s\" not found",phonenumber);
 		remove("c:/file.ojs");
 		rename("c:/temp.ojs","c:/file.ojs");
-		getch();
+		getchar();
 		fclose(f);
 		fclose(t);
 		main();
@@ -163,7 +163,7 @@ void deleterecords()
 	printf("The Number %s Successfully Deleted!!!!",phonenumber);
 	fclose(f);
 	fclose(t);
-	getch();
+	getchar();
 }
 void searchrecords()
 {
@@ -191,7 +191,7 @@ void searchrecords()
 			printf("Requested Phone Number Not found in our database");
 		}
 	}
-	getch();
+	getchar();
 	fclose(f);
 }
 void modifyrecords()
@@ -259,6 +259,6 @@ void payment()
 	}
 	system("cls");
 	printf("THANK YOU %s FOR YOUR TIMELY PAYMENTS",s.name);
-	getch();
+	getchar();
 	fclose(f);
 }
