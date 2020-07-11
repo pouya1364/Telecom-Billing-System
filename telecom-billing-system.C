@@ -5,7 +5,6 @@
 #include<unistd.h>
 #include <cstdlib>
 
-// #include <windows.h> //uncomment it if you are running it in windows
 struct subscriber
 {
 char phonenumber[20];
