@@ -164,6 +164,7 @@ void deleterecords()
 	printf("The Number %s Successfully Deleted!!!!",phonenumber);
 	fclose(f);
 	fclose(t);
+	printf("Press any key to continue...");
 	getchar();
 }
 void searchrecords()
