@@ -164,8 +164,8 @@ void deleterecords()
 	printf("The Number %s Successfully Deleted!!!!",phonenumber);
 	fclose(f);
 	fclose(t);
-	printf("Press any key to continue...");
-	getchar();
+	printf("Press any key to continue....");
+	getchar(); 
 }
 void searchrecords()
 {
@@ -190,7 +190,7 @@ void searchrecords()
 		}
 		else if(flag==1)
 		{	clear_screen();
-			printf("Requested Phone Number Not found in our database");
+			printf("Requested Phone Number Not found in our   database");
 		}
 	}
 	getchar();
