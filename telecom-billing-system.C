@@ -190,7 +190,7 @@ void searchrecords()
 		}
 		else if(flag==1)
 		{	clear_screen();
-			printf("Requested Phone Number Not found in our   database");
+			printf("Requested Phone Number Not found in our database");
 		}
 	}
 	getchar();
