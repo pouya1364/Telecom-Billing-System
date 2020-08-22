@@ -135,7 +135,7 @@ void deleterecords()
 	if((f=fopen("file.ojs","rb"))==NULL)
 	exit(0);
 	clear_screen();
-	printf("Enter the phone number to be deleted from the Database");
+	printf("Enter the phone number to be deleted from the Database: ");
 	fflush(stdin);
 	scanf("%[^\n]",phonenumber);
 	while(fread(&s,sizeof(s),1,f)==1)
@@ -177,7 +177,7 @@ void searchrecords()
 		exit(0);
 	fflush(stdin);
 	clear_screen();
-	printf("Enter Phone Number to search in our database");
+	printf("Enter Phone Number to search in our database: ");
 	scanf("%s", phonenumber);
 	while(fread(&s,sizeof(s),1,f)==1)
 	{
@@ -190,7 +190,7 @@ void searchrecords()
 		}
 		else if(flag==1)
 		{	clear_screen();
-			printf("Requested Phone Number Not found in our database");
+			printf("Requested Phone Number Not found in our database.");
 		}
 	}
 	getchar();
@@ -204,7 +204,7 @@ void modifyrecords()
 	if((f=fopen("file.ojs","rb+"))==NULL)
 		exit(0);
 	clear_screen();
-	printf("Enter phone number of the subscriber to modify:");
+	printf("Enter phone number of the subscriber to modify: ");
 	scanf("%[^\n]",phonenumber);
 	fflush(stdin);
 	while(fread(&s,sizeof(s),1,f)==1)
@@ -236,7 +236,7 @@ void payment()
 	if((f=fopen("file.ojs","rb+"))==NULL)
 		exit(0);
 	clear_screen();
-	printf("Enter phone number of the subscriber for payment");
+	printf("Enter phone number of the subscriber for payment: ");
 	scanf("%[^\n]",phonenumber);
 	fflush(stdin);
 	while(fread(&s,sizeof(s),1,f)==1)
