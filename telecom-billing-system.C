@@ -150,7 +150,7 @@ void deleterecords()
 	}
 	if(i==1)
 	{       clear_screen();
-		printf("Phone number \"%s\" not found",phonenumber);
+		printf("Phone number \"%s\" not found: ",phonenumber);
 		remove("file.ojs");
 		rename("temp.ojs","file.ojs");
 		getchar();
@@ -260,7 +260,7 @@ void payment()
 		}
 	}
 	clear_screen();
-	printf("THANK YOU %s FOR YOUR TIMELY PAYMENTS",s.name);
+	printf("THANK YOU %s FOR YOUR TIMELY PAYMENTS - ",s.name);
 	getchar();
 	fclose(f);
 
