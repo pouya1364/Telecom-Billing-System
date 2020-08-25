@@ -260,7 +260,7 @@ void payment()
 		}
 	}
 	clear_screen();
-	printf("THANK YOU %s FOR YOUR TIMELY PAYMENTS - ",s.name);
+	printf("THANK YOU %s FOR YOUR TIMELY PAYMENTS ",s.name);
 	getchar();
 	fclose(f);
 
