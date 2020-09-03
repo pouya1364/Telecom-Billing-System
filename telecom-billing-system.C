@@ -48,6 +48,7 @@ int main()
 		printf("\n M : for modifying records.\n P : for payment");
 		printf("\n S : for searching records.");
 		printf("\n D : for deleting records.\n E : for exit\n");
+		// make a choice
 		choice=getchar();
 		choice=toupper(choice);
 		switch(choice)
