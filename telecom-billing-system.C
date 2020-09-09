@@ -68,7 +68,7 @@ int main()
 			case 'E':
 				clear_screen();
 				printf("\n\n\t\t\t\tTHANK YOU");
-				printf("\n\n\n\n\n:\n\tFOR USING OUR SERVICE");
+				printf("\n\n\n\n\n\n\tFOR USING OUR SERVICE");
 				exit(0);
 				break;
 			default:
