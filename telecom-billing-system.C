@@ -85,7 +85,7 @@ void addrecords()
 	{   f=fopen("file.ojs","wb+");
 		clear_screen();
 		printf("please wait while we configure your computer");
-		printf("/npress any key to continue");
+		printf("/npress any key to continue ");
 		getchar();
 	}
 
@@ -165,7 +165,7 @@ void deleterecords()
 	printf("The Number %s Successfully Deleted!!!!",phonenumber);
 	fclose(f);
 	fclose(t);
-	printf("Press any key to continue....");
+	printf("Press any key to continue.....");
 	getchar(); 
 }
 void searchrecords()
