@@ -35,7 +35,7 @@ int main()
 	char choice;
 
 	clear_screen();
-	printf("\n\n**************************************************************");
+	printf("\n\n****************************************************************");
 	printf("\n\t------TELECOM BILLING MANAGEMENT SYSTEM------");
 	printf("\n\n****************************************************************");
 	printf("\n\nPress any key to continue");
